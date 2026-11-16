@@ -51,19 +51,28 @@ function Inicio({ alEmpezar }) {
   );
 }
 
-function MiNombre({ letras, alSeguir }) {
-  const url = medios.hola_mi_nombre_es?.video;
+/** Video en bucle del bucket; si no hay URL o no carga, muestra el texto. */
+function VideoSena({ url, texto }) {
   const [falla, setFalla] = useState(false);
+  return (
+    <section className="referencia">
+      {url && !falla ? (
+        <video src={url} autoPlay loop muted playsInline onError={() => setFalla(true)} />
+      ) : (
+        <p className="frase">{texto}</p>
+      )}
+    </section>
+  );
+}
+
+function MiNombre({ letras, alSeguir }) {
   return (
     <main className="pantalla mi-nombre">
       <h1>Así te presentas en LSM</h1>
-      <section className="referencia">
-        {url && !falla ? (
-          <video src={url} autoPlay loop muted playsInline onError={() => setFalla(true)} />
-        ) : (
-          <p className="frase">Hola, mi nombre es…</p>
-        )}
-      </section>
+      <VideoSena url={medios.hola_mi_nombre_es?.video} texto="Hola, mi nombre es…" />
+      <p className="lema">
+        Luis dice «Hola, mi nombre es» y deletrea L-U-I-S. Tú haz lo mismo con el tuyo:
+      </p>
       <ol className="nombre-grande">
         {letras.map((l, i) => (
           <li key={i}>{l}</li>
@@ -81,6 +90,8 @@ function Califica({ nombre, alEnviar }) {
   const [comentario, setComentario] = useState('');
   return (
     <main className="pantalla califica">
+      <VideoSena url={medios.gracias?.video} texto="¡Gracias!" />
+      <p className="lema">Nagbi te dice «Gracias» en LSM.</p>
       <h1>¿Qué tal te fue?</h1>
       <form
         onSubmit={(e) => {

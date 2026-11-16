@@ -1,95 +1,98 @@
 {
   "letras": {
     "A": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_a.webp?alt=media&token=2f5f7783-d2a5-468e-bdf7-105afa2f0bfc"
     },
     "B": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_b.webp?alt=media&token=2e556ea9-78a1-4e7f-88cc-b5a19b66a580"
     },
     "C": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_c.webp?alt=media&token=8c625666-8618-44ee-8302-b209a4b8ec13"
     },
     "D": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_d.webp?alt=media&token=d70337c4-e3f4-482e-a516-498e49b60374"
     },
     "E": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_e.webp?alt=media&token=12b1bf26-98c9-4b5b-bab6-e3b8d413a989"
     },
     "F": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_f.webp?alt=media&token=862cc0b7-5a4b-47f0-aa79-ee0841702ec8"
     },
     "G": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_g.webp?alt=media&token=68903f40-2cb8-43b2-8a07-c1bbc563d4bd"
     },
     "H": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_h.webp?alt=media&token=1018e33a-dab8-4a9d-9d10-d4fdcfe32c79"
     },
     "I": {
-      "imagen": ""
-    },
-    "J": {
-      "video": ""
-    },
-    "K": {
-      "video": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_i.webp?alt=media&token=36231dd1-6e4e-401f-9e3b-768f7f2da576"
     },
     "L": {
-      "imagen": ""
-    },
-    "LL": {
-      "video": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_l.webp?alt=media&token=cb3aec60-3887-4721-93ba-13a0c713f778"
     },
     "M": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_m.webp?alt=media&token=ce38b784-d2d3-424c-982f-7f4ed5940346"
     },
     "N": {
-      "imagen": ""
-    },
-    "Ñ": {
-      "video": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_n.webp?alt=media&token=46f20bc1-59af-4fae-9c6c-0f9660f7723a"
     },
     "O": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_o.webp?alt=media&token=feeae1b1-e065-401e-a203-3eb2b61951ad"
     },
     "P": {
-      "imagen": ""
-    },
-    "Q": {
-      "video": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_p.webp?alt=media&token=7b2550bc-396a-4aba-96ff-1a75394e8f2c"
     },
     "R": {
-      "imagen": ""
-    },
-    "RR": {
-      "video": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_r.webp?alt=media&token=3cb8e483-a6d0-43a2-adff-be27c4dfa938"
     },
     "S": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_s.webp?alt=media&token=23e695cf-e367-4d1b-b680-dac1e1bfba5c"
     },
     "T": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_t.webp?alt=media&token=db631352-890e-4713-8b24-b72f20a7da6e"
     },
     "U": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_u.webp?alt=media&token=0bedbe5a-070d-4ad2-be75-fcdca91907bd"
     },
     "V": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_v.webp?alt=media&token=d360772c-cb05-40af-8ea6-6a426fbb0718"
     },
     "W": {
-      "imagen": ""
-    },
-    "X": {
-      "video": "",
-      "video_lado": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_w.webp?alt=media&token=32adf1a8-0b53-4ff0-9658-29f5080a767f"
     },
     "Y": {
-      "imagen": ""
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_estaticas_lsm%2Flsm_letra_y.webp?alt=media&token=3802efc6-e802-4473-b10f-4750ab0a6f77"
+    },
+    "J": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_j.mp4?alt=media&token=369b43ed-7a02-4976-941c-4f5ee73182db"
+    },
+    "K": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_k.mp4?alt=media&token=7b89be4c-a64b-460b-b00e-660d7e0f9a69"
+    },
+    "Ñ": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_nn.mp4?alt=media&token=3fb64e4e-67bf-4117-ae5e-795f16d06cd1"
+    },
+    "Q": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_q.mp4?alt=media&token=966b8bbf-c9e0-427a-90dd-e143fb991c58"
+    },
+    "X": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_x.mp4?alt=media&token=a5e2aef7-7852-4091-b4a4-2d8aedebcdfe",
+      "video_lado": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_x_lado.mp4?alt=media&token=274a5880-2246-413d-9afb-454c48b9d9b5"
     },
     "Z": {
-      "video": ""
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_z.mp4?alt=media&token=5f7a51b6-d76b-40a9-97d8-9d0543f9c0c1"
+    },
+    "LL": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_ll.mp4?alt=media&token=f8721c14-145e-4a1f-a1bf-75c444be3d31"
+    },
+    "RR": {
+      "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/letras_dinamicas%2Flsm_letra_rr.mp4?alt=media&token=ce9b1c62-fead-4745-91ce-e00635a18dc8"
     }
   },
   "hola_mi_nombre_es": {
-    "video": ""
+    "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/videos_lsm%2Fhola_mi_nombre_es.mp4?alt=media&token=5f84824a-25d2-4999-a96a-d0b0494c6199"
+  },
+  "gracias": {
+    "video": "https://firebasestorage.googleapis.com/v0/b/conmigo-db4e3.firebasestorage.app/o/videos_lsm%2Fgracias.mp4?alt=media&token=976c2dbb-ba25-4662-abd5-0b548dbaae17"
   }
 }
