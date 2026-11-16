@@ -1,0 +1,95 @@
+{
+  "letras": {
+    "A": {
+      "imagen": ""
+    },
+    "B": {
+      "imagen": ""
+    },
+    "C": {
+      "imagen": ""
+    },
+    "D": {
+      "imagen": ""
+    },
+    "E": {
+      "imagen": ""
+    },
+    "F": {
+      "imagen": ""
+    },
+    "G": {
+      "imagen": ""
+    },
+    "H": {
+      "imagen": ""
+    },
+    "I": {
+      "imagen": ""
+    },
+    "J": {
+      "video": ""
+    },
+    "K": {
+      "video": ""
+    },
+    "L": {
+      "imagen": ""
+    },
+    "LL": {
+      "video": ""
+    },
+    "M": {
+      "imagen": ""
+    },
+    "N": {
+      "imagen": ""
+    },
+    "Ñ": {
+      "video": ""
+    },
+    "O": {
+      "imagen": ""
+    },
+    "P": {
+      "imagen": ""
+    },
+    "Q": {
+      "video": ""
+    },
+    "R": {
+      "imagen": ""
+    },
+    "RR": {
+      "video": ""
+    },
+    "S": {
+      "imagen": ""
+    },
+    "T": {
+      "imagen": ""
+    },
+    "U": {
+      "imagen": ""
+    },
+    "V": {
+      "imagen": ""
+    },
+    "W": {
+      "imagen": ""
+    },
+    "X": {
+      "video": "",
+      "video_lado": ""
+    },
+    "Y": {
+      "imagen": ""
+    },
+    "Z": {
+      "video": ""
+    }
+  },
+  "hola_mi_nombre_es": {
+    "video": ""
+  }
+}
