@@ -1,6 +1,6 @@
 """QR de la demo web con el oso de ConMigo al centro (ADR 0010).
 
-    python demo_web/herramientas/generar_qr.py [url] [salida.png]
+    python herramientas/generar_qr.py [url] [salida.png]
 
 Corrección de errores alta (H, ~30 %): el oso tapa menos de eso y el QR se
 sigue leyendo. Pruébalo con varios celulares antes de imprimirlo.
@@ -12,8 +12,8 @@ from pathlib import Path
 import qrcode
 from PIL import Image, ImageDraw
 
-URL = "https://conmigo-db4e3.web.app"
-LOGO = Path(__file__).parents[2] / "assets/iconos/logo_conmigo.png"
+URL = "https://conmigo-demo-web.carlos-gomez-dev13.workers.dev/"
+LOGO = Path(__file__).parents[1] / "public/logo_conmigo.png"
 FRACCION_OSO = 0.375  # el oso ocupa la parte izquierda del logo (sin el texto)
 LADO_LOGO = 0.26  # del lado del QR; con corrección H basta y sobra
 AZUL_MARINO = "#0E2A47"
