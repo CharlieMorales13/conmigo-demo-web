@@ -51,11 +51,19 @@ function Inicio({ alEmpezar }) {
   );
 }
 
-/** Video en bucle del bucket; si no hay URL o no carga, muestra el texto. */
-function VideoSena({ url, texto }) {
+const PROPORCION_VIDEO = 16 / 9;
+/** Fracción central del ancho que hay que mostrar sin cortar las manos.
+ *  Copiada de assets/videos/encuadres.json de la app. */
+const ENCUADRE = { hola_mi_nombre_es: 0.557, gracias: 0.416 };
+
+/** Video en bucle del bucket, recortado a la persona (centrada y grande) y
+ *  con alto máximo [altoMaximo]; si no hay URL o no carga, muestra el texto. */
+function VideoSena({ url, texto, encuadre, altoMaximo }) {
   const [falla, setFalla] = useState(false);
+  const proporcion = encuadre * PROPORCION_VIDEO;
+  const tamano = { aspectRatio: proporcion, width: `min(100%, calc(${altoMaximo} * ${proporcion}))` };
   return (
-    <section className="referencia">
+    <section className="referencia recorte" style={tamano}>
       {url && !falla ? (
         <video src={url} autoPlay loop muted playsInline onError={() => setFalla(true)} />
       ) : (
@@ -69,7 +77,12 @@ function MiNombre({ letras, alSeguir }) {
   return (
     <main className="pantalla mi-nombre">
       <h1>Así te presentas en LSM</h1>
-      <VideoSena url={medios.hola_mi_nombre_es?.video} texto="Hola, mi nombre es…" />
+      <VideoSena
+        url={medios.hola_mi_nombre_es?.video}
+        texto="Hola, mi nombre es…"
+        encuadre={ENCUADRE.hola_mi_nombre_es}
+        altoMaximo="50dvh"
+      />
       <p className="lema">
         Luis dice «Hola, mi nombre es» y deletrea L-U-I-S. Tú haz lo mismo con el tuyo:
       </p>
@@ -90,7 +103,7 @@ function Califica({ nombre, alEnviar }) {
   const [comentario, setComentario] = useState('');
   return (
     <main className="pantalla califica">
-      <VideoSena url={medios.gracias?.video} texto="¡Gracias!" />
+      <VideoSena url={medios.gracias?.video} texto="¡Gracias!" encuadre={ENCUADRE.gracias} altoMaximo="38dvh" />
       <p className="lema">Nagbi te dice «Gracias» en LSM.</p>
       <h1>¿Qué tal te fue?</h1>
       <form

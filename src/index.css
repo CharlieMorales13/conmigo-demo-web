@@ -202,9 +202,9 @@ form { display: flex; flex-direction: column; gap: 10px; }
 
 /* Mi nombre es */
 .mi-nombre { justify-content: center; }
-.mi-nombre .referencia, .califica .referencia { flex: 0 1 auto; aspect-ratio: 4 / 3; }
-/* Gracias de Nagbi: a lo más 30 % del alto, para que quepan estrellas y comentario. */
-.califica .referencia { width: min(100%, calc(30dvh * 4 / 3)); align-self: center; }
+/* Videos de Luis y Nagbi: tamaño y proporción vienen de VideoSena (encuadre). */
+.referencia.recorte { flex: 0 0 auto; align-self: center; }
+.referencia.recorte video { object-fit: cover; }
 .frase { font-size: 1.6rem; font-weight: 800; color: var(--primario); }
 .nombre-grande li {
   min-width: 48px;
