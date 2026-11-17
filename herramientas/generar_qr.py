@@ -1,9 +1,10 @@
-"""QR de la demo web con el oso de ConMigo al centro (ADR 0010).
+"""QR de la demo web con el logo completo de ConMigo al centro (ADR 0010).
 
     python herramientas/generar_qr.py [url] [salida.png]
 
-Corrección de errores alta (H, ~30 %): el oso tapa menos de eso y el QR se
-sigue leyendo. Pruébalo con varios celulares antes de imprimirlo.
+Corrección de errores alta (H, ~30 %). El logo mide 45 % del ancho y tapa ~18 %
+del código: se leyó reducido al 20 % y desenfocado; con 55 % ya no se lee.
+Pruébalo con varios celulares antes de imprimirlo.
 """
 
 import sys
@@ -14,16 +15,15 @@ from PIL import Image, ImageDraw
 
 URL = "https://conmigo-demo-web.carlos-gomez-dev13.workers.dev/"
 LOGO = Path(__file__).parents[1] / "public/logo_conmigo.png"
-FRACCION_OSO = 0.375  # el oso ocupa la parte izquierda del logo (sin el texto)
-LADO_LOGO = 0.26  # del lado del QR; con corrección H basta y sobra
+ANCHO_LOGO = 0.45  # del lado del QR; 0.55 ya no se lee
+MARGEN_LOGO = 0.02  # borde blanco alrededor del logo, del lado del QR
 AZUL_MARINO = "#0E2A47"
 PIXELES_POR_MODULO = 20
 
 
-def oso() -> Image.Image:
-    logo = Image.open(LOGO).convert("RGBA")
-    recorte = logo.crop((0, 0, round(logo.width * FRACCION_OSO), logo.height))
-    return recorte.crop(recorte.getbbox())
+def logo() -> Image.Image:
+    imagen = Image.open(LOGO).convert("RGBA")
+    return imagen.crop(imagen.getchannel("A").getbbox())
 
 
 def generar(url: str) -> Image.Image:
@@ -34,18 +34,17 @@ def generar(url: str) -> Image.Image:
     )
     qr.add_data(url)
     imagen = qr.make_image(fill_color=AZUL_MARINO, back_color="white").convert("RGBA")
-    lado = round(imagen.width * LADO_LOGO)
-    figura = oso()
-    figura.thumbnail((lado * 0.85, lado * 0.85), Image.LANCZOS)
-    fondo = Image.new("RGBA", (lado, lado), (0, 0, 0, 0))
+    figura = logo()
+    figura.thumbnail((round(imagen.width * ANCHO_LOGO), imagen.width), Image.LANCZOS)
+    margen = round(imagen.width * MARGEN_LOGO)
+    ancho, alto = figura.width + 2 * margen, figura.height + 2 * margen
+    fondo = Image.new("RGBA", (ancho, alto), (0, 0, 0, 0))
     ImageDraw.Draw(fondo).rounded_rectangle(
-        (0, 0, lado - 1, lado - 1), lado // 5, fill="white"
+        (0, 0, ancho - 1, alto - 1), min(ancho, alto) // 5, fill="white"
     )
-    fondo.alpha_composite(
-        figura, ((lado - figura.width) // 2, (lado - figura.height) // 2)
-    )
+    fondo.alpha_composite(figura, (margen, margen))
     imagen.alpha_composite(
-        fondo, ((imagen.width - lado) // 2, (imagen.height - lado) // 2)
+        fondo, ((imagen.width - ancho) // 2, (imagen.height - alto) // 2)
     )
     return imagen.convert("RGB")
 
