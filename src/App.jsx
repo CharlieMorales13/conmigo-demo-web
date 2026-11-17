@@ -14,6 +14,7 @@ function Logo({ chico }) {
 
 function Inicio({ alEmpezar }) {
   const [texto, setTexto] = useState('');
+  const [zurdo, setZurdo] = useState(false);
   const nombre = normalizarNombre(texto);
 
   // Mientras escribe su nombre ya se descargan MediaPipe y los modelos.
@@ -28,7 +29,7 @@ function Inicio({ alEmpezar }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (nombre) alEmpezar(nombre);
+          if (nombre) alEmpezar(nombre, zurdo);
         }}
       >
         <label htmlFor="nombre">¿Cuál es tu primer nombre?</label>
@@ -42,6 +43,18 @@ function Inicio({ alEmpezar }) {
           placeholder="Tu nombre"
         />
         <p className="vista-previa">{nombre && `Vas a deletrear: ${nombre}`}</p>
+        {/* No se guarda: solo voltea las fotos y videos, como en la app. */}
+        <fieldset className="mano">
+          <legend>¿Con qué mano haces las señas?</legend>
+          {[
+            [false, 'Derecha'],
+            [true, 'Izquierda'],
+          ].map(([valor, texto]) => (
+            <button type="button" key={texto} aria-pressed={zurdo === valor} onClick={() => setZurdo(valor)}>
+              {texto}
+            </button>
+          ))}
+        </fieldset>
         <button className="boton" disabled={!nombre}>
           Empezar
         </button>
@@ -58,14 +71,22 @@ const ENCUADRE = { hola_mi_nombre_es: 0.557, gracias: 0.416 };
 
 /** Video en bucle del bucket, recortado a la persona (centrada y grande) y
  *  con alto máximo [altoMaximo]; si no hay URL o no carga, muestra el texto. */
-function VideoSena({ url, texto, encuadre, altoMaximo }) {
+function VideoSena({ url, texto, encuadre, altoMaximo, zurdo }) {
   const [falla, setFalla] = useState(false);
   const proporcion = encuadre * PROPORCION_VIDEO;
   const tamano = { aspectRatio: proporcion, width: `min(100%, calc(${altoMaximo} * ${proporcion}))` };
   return (
     <section className="referencia recorte" style={tamano}>
       {url && !falla ? (
-        <video src={url} autoPlay loop muted playsInline onError={() => setFalla(true)} />
+        <video
+          className={zurdo ? 'espejo' : undefined}
+          src={url}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onError={() => setFalla(true)}
+        />
       ) : (
         <p className="frase">{texto}</p>
       )}
@@ -73,7 +94,7 @@ function VideoSena({ url, texto, encuadre, altoMaximo }) {
   );
 }
 
-function MiNombre({ letras, alSeguir }) {
+function MiNombre({ letras, zurdo, alSeguir }) {
   return (
     <main className="pantalla mi-nombre">
       <h1>Así te presentas en LSM</h1>
@@ -82,6 +103,7 @@ function MiNombre({ letras, alSeguir }) {
         texto="Hola, mi nombre es…"
         encuadre={ENCUADRE.hola_mi_nombre_es}
         altoMaximo="50dvh"
+        zurdo={zurdo}
       />
       <p className="lema">
         Luis dice «Hola, mi nombre es» y deletrea L-U-I-S. Tú haz lo mismo con el tuyo:
@@ -98,12 +120,18 @@ function MiNombre({ letras, alSeguir }) {
   );
 }
 
-function Califica({ nombre, alEnviar }) {
+function Califica({ nombre, zurdo, alEnviar }) {
   const [estrellas, setEstrellas] = useState(0);
   const [comentario, setComentario] = useState('');
   return (
     <main className="pantalla califica">
-      <VideoSena url={medios.gracias?.video} texto="¡Gracias!" encuadre={ENCUADRE.gracias} altoMaximo="38dvh" />
+      <VideoSena
+        url={medios.gracias?.video}
+        texto="¡Gracias!"
+        encuadre={ENCUADRE.gracias}
+        altoMaximo="38dvh"
+        zurdo={zurdo}
+      />
       <p className="lema">Nagbi te dice «Gracias» en LSM.</p>
       <h1>¿Qué tal te fue?</h1>
       <form
@@ -164,21 +192,23 @@ export default function App() {
   const [pantalla, setPantalla] = useState('inicio');
   const [nombre, setNombre] = useState('');
   const [letras, setLetras] = useState([]);
+  const [zurdo, setZurdo] = useState(false);
 
   switch (pantalla) {
     case 'deletrea':
-      return <Deletrea letras={letras} alTerminar={() => setPantalla('mi-nombre')} />;
+      return <Deletrea letras={letras} zurdo={zurdo} alTerminar={() => setPantalla('mi-nombre')} />;
     case 'mi-nombre':
-      return <MiNombre letras={letras} alSeguir={() => setPantalla('califica')} />;
+      return <MiNombre letras={letras} zurdo={zurdo} alSeguir={() => setPantalla('califica')} />;
     case 'califica':
-      return <Califica nombre={nombre} alEnviar={() => setPantalla('gracias')} />;
+      return <Califica nombre={nombre} zurdo={zurdo} alEnviar={() => setPantalla('gracias')} />;
     case 'gracias':
       return <Gracias nombre={nombre} alReiniciar={() => setPantalla('inicio')} />;
     default:
       return (
         <Inicio
-          alEmpezar={(n) => {
+          alEmpezar={(n, z) => {
             setNombre(n);
+            setZurdo(z);
             setLetras(letrasDe(n));
             setPantalla('deletrea');
           }}

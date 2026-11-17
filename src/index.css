@@ -100,6 +100,25 @@ form { display: flex; flex-direction: column; gap: 10px; }
 .vista-previa { min-height: 1.4em; margin: 0; font-weight: 700; color: var(--primario); }
 .aviso { margin: 0; text-align: center; font-size: 0.85rem; color: var(--texto-suave); }
 
+/* Mano para señar: dos botones; el elegido va en azul. */
+.mano { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; border: 0; }
+.mano legend { width: 100%; margin-bottom: 8px; padding: 0; font-weight: 800; }
+.mano button {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+  color: var(--texto-suave);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.mano button[aria-pressed='true'] { border-color: var(--primario); background: var(--primario-claro); color: var(--primario); }
+
+/* Fotos y videos de señas volteados para zurdos. */
+.espejo { transform: scaleX(-1); }
+
 /* Deletrea */
 .deletrea { height: 100dvh; gap: 10px; }
 

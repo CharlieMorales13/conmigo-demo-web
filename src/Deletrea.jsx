@@ -47,7 +47,9 @@ function dibujarManos(lienzo, manos) {
 }
 
 // Foto o video de cómo se hace la letra; la letra en grande si no hay medio.
-function Referencia({ letra }) {
+// Para zurdos se voltea el medio (no la letra en grande), como en la app.
+function Referencia({ letra, zurdo }) {
+  const espejo = zurdo ? 'espejo' : undefined;
   const medio = medios.letras[letra] ?? {};
   const videos = [
     [medio.video, 'De frente'],
@@ -60,13 +62,13 @@ function Referencia({ letra }) {
     return <div className="letra-grande">{letra}</div>;
   }
   if (medio.imagen) {
-    return <img src={medio.imagen} alt={`Seña de la ${letra}`} onError={fallar} />;
+    return <img className={espejo} src={medio.imagen} alt={`Seña de la ${letra}`} onError={fallar} />;
   }
   return (
     <div className="videos">
       {videos.map(([url, etiqueta]) => (
         <figure key={url}>
-          <video src={url} autoPlay loop muted playsInline onError={fallar} />
+          <video className={espejo} src={url} autoPlay loop muted playsInline onError={fallar} />
           {videos.length > 1 && <figcaption>{etiqueta}</figcaption>}
         </figure>
       ))}
@@ -74,7 +76,7 @@ function Referencia({ letra }) {
   );
 }
 
-export default function Deletrea({ letras, alTerminar }) {
+export default function Deletrea({ letras, zurdo, alTerminar }) {
   const [indice, setIndice] = useState(0);
   const [progreso, setProgreso] = useState(0);
   const [pareceOtra, setPareceOtra] = useState(null);
@@ -212,7 +214,7 @@ export default function Deletrea({ letras, alTerminar }) {
       </ol>
 
       <section className="referencia">
-        <Referencia key={indice} letra={letra} />
+        <Referencia key={indice} letra={letra} zurdo={zurdo} />
       </section>
 
       <section className="camara">
