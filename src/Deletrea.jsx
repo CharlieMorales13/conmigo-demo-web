@@ -47,9 +47,10 @@ function dibujarManos(lienzo, manos) {
 }
 
 // Foto o video de cómo se hace la letra; la letra en grande si no hay medio.
-// Para zurdos se voltea el medio (no la letra en grande), como en la app.
+// La cámara se ve en espejo, así que el medio (no la letra en grande) se
+// voltea para diestros: así la seña queda del mismo lado que su mano.
 function Referencia({ letra, zurdo }) {
-  const espejo = zurdo ? 'espejo' : undefined;
+  const espejo = zurdo ? undefined : 'espejo';
   const medio = medios.letras[letra] ?? {};
   const videos = [
     [medio.video, 'De frente'],

@@ -45,10 +45,10 @@ function Inicio({ alEmpezar }) {
         <p className="vista-previa">{nombre && `Vas a deletrear: ${nombre}`}</p>
         {/* No se guarda: solo voltea las fotos y videos, como en la app. */}
         <fieldset className="mano">
-          <legend>¿Con qué mano haces las señas?</legend>
+          <legend>¿Eres diestro o zurdo?</legend>
           {[
-            [false, 'Derecha'],
-            [true, 'Izquierda'],
+            [false, 'Diestro'],
+            [true, 'Zurdo'],
           ].map(([valor, texto]) => (
             <button type="button" key={texto} aria-pressed={zurdo === valor} onClick={() => setZurdo(valor)}>
               {texto}
